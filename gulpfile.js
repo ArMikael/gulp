@@ -1,10 +1,10 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var cleanCSS = require('gulp-clean-css');
 var watch = require('gulp-watch');
 var webserver = require('gulp-webserver');
 var logger = require('gulp-logger');
-var minify = require('gulp-minify');
 
 var paths = {
   js: ['./dev/js/*.js', '!.dev/js/lib/*.js'],
@@ -12,9 +12,13 @@ var paths = {
   img: ['./dev/img/*.jpg', './dev/img/*.png']
 };
 
-gulp.task('css', function() {
+gulp.task('mincss', function() {
   return gulp.src(paths.css)
     .pipe(concat('styles.css'))
+    .pipe(cleanCSS({debug: true}, function(details) {
+      console.log(details.name + ': ' + details.stats.originalSize);
+      console.log(details.name + ': ' + details.stats.minifiedSize);
+    }))
     .pipe(gulp.dest('./prod/css'));
 });
 
@@ -25,8 +29,8 @@ gulp.task('js', function() {
       after: 'JS complete!',
       showChange: true
   }))
-  .pipe(uglify())
   .pipe(concat('all.js'))
+  .pipe(uglify())
   .pipe(gulp.dest('./prod/js'));
 });
 
@@ -41,8 +45,8 @@ gulp.task('webserver', function() {
 
 gulp.task('watch', function() {
   gulp.watch(paths.js, ['js']);
-  gulp.watch(paths.css, ['css']);
+  gulp.watch(paths.css, ['mincss']);
 });
 
 
-gulp.task('default', ['css', 'js', 'webserver', 'watch']);
+gulp.task('default', ['mincss', 'js', 'webserver', 'watch']);

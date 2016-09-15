@@ -1,6 +1,10 @@
 (function(){
 	'use strict';
 
-	var newVar = 'Gulp';
+	var newVar = 10;
 	
+	newVar = newVar++;
+
+	console.log(newVar);
+
 })();

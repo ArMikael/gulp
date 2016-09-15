@@ -1,2 +1,1 @@
-!function(){"use strict"}();
-!function(){"use strict"}();
+!function(){"use strict";var t=10;t=t++,console.log(t)}(),function(){"use strict"}();
