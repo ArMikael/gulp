@@ -1,0 +1,29 @@
+div {
+	font-size: 16px;
+	border: 1px solid black;
+	background-color: transparent;
+}
+
+h1 {
+	padding-left: 40px;
+	color: red;
+}
+
+.main {
+	background-color: beige;
+}
+
+
+
+
+
+body {
+	color: green;
+	font-weight: 600;
+}
+
+p {
+	color: gold;
+}
+
+
