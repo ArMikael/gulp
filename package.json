@@ -10,12 +10,20 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^2.0.12",
     "gulp-concat": "^2.6.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-hash-filename": "^1.2.0",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-jshint": "^2.0.1",
     "gulp-logger": "0.0.2",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.9",
-    "gulp-webserver": "^0.9.1"
+    "gulp-webserver": "^0.9.1",
+    "gutil": "^1.6.4",
+    "jshint": "^2.9.3"
   }
 }

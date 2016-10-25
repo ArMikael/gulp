@@ -5,6 +5,10 @@
 	
 	newVar = newVar++;
 
+	if (newVar) {
+		console.log('True');
+	}
+
 	console.log(newVar);
 
 })();
